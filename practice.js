@@ -41,47 +41,69 @@
 
 
 const hugeArray = Array.from({ length: 100000 }, () => {
-   return Math.floor(Math.random() * 1000);
+    return Math.floor(Math.random() * 1000);
 });
 
-const findDupSlow = arr => {
-    const timeStart = performance.now();
-    const duplicates = [];
+// const findDupSlow = arr => {
+//     const timeStart = performance.now();
+//     const duplicates = [];
 
-    for (let i = 0; i < arr.length; i++) {
-        for (j = i + 1; j < arr.length; j++) {
-            if (arr[i] === arr[j]) {
-                if (!duplicates.includes(arr[i])) {
-                    duplicates.push(arr[i]);
-                };
-            };
-        };
-    };
-    const timeEnd = performance.now();
-    console.log((timeEnd - timeStart) );
-    return duplicates;
-};
+//     for (let i = 0; i < arr.length; i++) {
+//         for (j = i + 1; j < arr.length; j++) {
+//             if (arr[i] === arr[j]) {
+//                 if (!duplicates.includes(arr[i])) {
+//                     duplicates.push(arr[i]);
+//                 };
+//             };
+//         };
+//     };
+//     const timeEnd = performance.now();
+//     console.log((timeEnd - timeStart) );
+//     return duplicates;
+// };
 
 // console.log(findDupSlow(hugeArray));
 
-const findDupFast = arr => {
-    timeStart = performance.now();
+// const findDupFast = arr => {
+//     timeStart = performance.now();
 
-    const seen = new Set();
-    const duplicates = new Set();
+//     const seen = new Set();
+//     const duplicates = new Set();
 
-    for (let num of arr) {
-        if (seen.has(num)) {
-            duplicates.add(num)
-        } else {
-            seen.add(num)
-        }
-    }
-    const timeEnd = performance.now();
+//     for (let num of arr) {
+//         if (seen.has(num)) {
+//             duplicates.add(num)
+//         } else {
+//             seen.add(num)
+//         }
+//     }
+//     const timeEnd = performance.now();
 
-    console.log((timeEnd - timeStart));
-    return [...duplicates];
-}
+//     console.log((timeEnd - timeStart));
+//     return [...duplicates];
+// }
 
-console.log(findDupFast(hugeArray));
+// console.log(findDupFast(hugeArray));
+
+
+
+
+// const removeDuplicates = arr => {
+//     const startTime = performance.now()
+//     let newArr = [];
+
+//     for (let i = 0; i < arr.length; i++) {
+//         if (!newArr.includes(arr[i])) {
+//             newArr.push(arr[i])
+//         }
+//     }
+//     const endsTime = performance.now();
+//     console.log(`Estimating time:${endsTime - startTime}`);
+//     return newArr.length;
+// }
+
+// console.log(removeDuplicates(hugeArray));
+
+
+
 
